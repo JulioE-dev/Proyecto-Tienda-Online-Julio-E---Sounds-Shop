@@ -1,0 +1,229 @@
+/* FUENTES */
+
+@font-face {
+  font-family: 'Ibm Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shareTechMono';
+  src: url('../assets/fonts/ShareTechMono-Regular.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'shareTechMono', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+
+/* MENÚ RESPONSIVE Y HEADER */
+
+.toggle-menu { display: none; }
+.nav-icon {
+  color: #fff;
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+@media (max-width: 878px) {
+  #nav ul {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: #1e2326;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .toggle-menu:checked ~ #nav ul { display: flex; }
+  .nav-icon { display: block; }
+}
+
+/* HEADER */
+
+.contenedor-header {
+  background: #2a2b2b;
+  position: fixed;
+  width: 100%;
+  top: 0; left: 0;
+  z-index: 99;
+}
+
+.contenedor-header header {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.JulioE a {
+  font-family: 'ShareTechMono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1CB698;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contenedor-header nav ul li a {
+  font-size: 14px; 
+  color: #fff;
+  margin: 0 12px;
+  padding: 3px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.contenedor-header nav ul li a:hover {
+  color: #1CB698;
+}
+
+/* FONDO Y ESTRUCTURA */
+
+.fondo {
+  position: relative;
+  background-image: url('../assets/images/dj.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  z-index: 0;
+}
+
+.fondo::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(20, 20, 20, 0.7);
+  z-index: -1;
+}
+
+.contenido-principal {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding-top: 80px; 
+}
+
+/* ESTILOS DEL FORMULARIO DE CONTACTO */
+
+.CONTACTO {
+  padding: 20px;
+  width: 100%;
+}
+
+.CONTACTO h2 {
+  color: #1CB698;
+  font-size: 40px;
+  font-family: 'orbitron', sans-serif;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.form-contacto {
+  width: 100%; 
+  max-width: 700px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgba(30, 35, 38, 0.85); 
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(28, 182, 152, 0.3);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.form-contacto label {
+  color: #1CB698;
+  font-weight: 600;
+  font-family: 'Ibm Plex Mono', Arial, sans-serif;
+  font-size: 14px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-family: 'Ibm Plex Mono', Arial, sans-serif;
+  resize: vertical;
+  width: 100%;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: 2px solid #1CB698;
+  background-color: #e6f7f1;
+  color: #000; 
+}
+
+.form-contacto button {
+  background-color: #1CB698;
+  color: #1e2326;
+  font-family: 'ibm Plex Mono', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.form-contacto button:hover {
+  background-color: #FCF8DD;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(28, 182, 152, 0.4);
+}
+
+@media (max-width: 480px) {
+  .CONTACTO h2 {
+    font-size: 28px;
+  }
+  .form-contacto {
+    padding: 25px;
+  }
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #303334;
+  color: #fffbfb;
+  font-size: 14px;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}

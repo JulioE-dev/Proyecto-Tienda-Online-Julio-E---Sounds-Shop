@@ -1,0 +1,235 @@
+/* FUENTES */
+
+@font-face {
+  font-family: 'Ibm Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('../assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'shareTechMono';
+  src: url('../assets/fonts/ShareTechMono-Regular.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'shareTechMono', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+
+.toggle-menu { display: none; }
+.nav-icon {
+  color: #fff;
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+@media (max-width: 878px) {
+  #nav ul {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: #1e2326;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .toggle-menu:checked ~ #nav ul { display: flex; }
+  .nav-icon { display: block; }
+}
+
+/* HEADER */
+
+.contenedor-header {
+  background: #2a2b2b;
+  position: fixed;
+  width: 100%;
+  top: 0; left: 0;
+  z-index: 99;
+}
+
+.contenedor-header header {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.JulioE a {
+  font-family: 'ShareTechMono', monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1CB698;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contenedor-header nav ul li a {
+  font-size: 14px; 
+  color: #fff;
+  margin: 0 12px;
+  padding: 3px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.contenedor-header nav ul li a:hover {
+  color: #1CB698;
+}
+
+.fondo {
+  position: relative;
+  background-image: url('../assets/images/dj.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  z-index: 0;
+}
+
+.fondo::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(20, 20, 20, 0.7);
+  z-index: -1;
+}
+
+.contenido-principal {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding-top: 80px; 
+}
+
+.seccion-producto {
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tarjeta-producto {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 20px;
+  background-color: rgba(30, 35, 38, 0.85); 
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(28, 182, 152, 0.3);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.producto-imagen {
+  flex: 1;
+  min-width: 200px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.producto-imagen img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+}
+
+.producto-detalles {
+  flex: 1;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.producto-detalles h2 {
+  color: #1CB698;
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.producto-detalles .precio {
+  font-size: 22px;
+  text-align: center;
+  color: #FCF8DD;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.producto-detalles .descripcion {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: justify;
+}
+
+/* BOTÓN AGREGAR AL CARRITO */
+
+.btn-carrito {
+  background-color: #1CB698;
+  color: #2a2b2b;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'shareTechMono', sans-serif;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn-carrito:hover {
+  background-color: #FCF8DD; 
+  transform: translateY(-3px); 
+  box-shadow: 0
+}
+
+/* FOOTER */
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #303334;
+  color: #fffbfb;
+  font-size: 14px;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
